@@ -1,2 +1,4 @@
-﻿  완주하지 못한 선수.cpp
-  altorithm for coding test.vcxproj -> C:\Users\baohao\source\repos\altorithm for coding test\Debug\hash.exe
+﻿  위장.cpp
+C:\Users\baohao\source\repos\algorithm for coding test (git)\algorithm-for-coding-test\altorithm for coding test\altorithm for coding test\위장.cpp(12,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+C:\Users\baohao\source\repos\algorithm for coding test (git)\algorithm-for-coding-test\altorithm for coding test\altorithm for coding test\위장.cpp(75,3): error C2044: continue가 잘못되었습니다.
+C:\Users\baohao\source\repos\algorithm for coding test (git)\algorithm-for-coding-test\altorithm for coding test\altorithm for coding test\위장.cpp(77,3): error C2044: continue가 잘못되었습니다.
