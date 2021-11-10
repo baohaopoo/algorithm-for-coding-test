@@ -1,78 +1,40 @@
-#include <iostream>
+#include<iostream>
+#include <string>
+#include <vector>
+#include<unordered_map>
 
 using namespace std;
 
-void info();
-void vending (int, int);
+int solution(vector<vector<string>> clothes) {
+	int answer = 0;
+	unordered_map<string, int> cmap;
 
-int		iCoin = 0, iSelect = 0;
-bool	bCheck = true;
+	for (int i = 0; i < clothes.size(); ++i) {
+		if (cmap.find(clothes[i][1]) == cmap.end()) //맵에 해당 종류가 없다면
+		{
+			cmap[clothes[i][1]] = 1;
+		}
+		else { //있으면 value값 추가.
+			cmap[clothes[i][1]] += 1;
+		}
+		
 
-void main()
-{ 
-	cout << "소지금: ";
-	cin >> iCoin;
-
-	while (bCheck)
-	{
-		system("cls");
-		cout << "소지금: " << iCoin << endl;
-		info();
-		cout << "입력: ";
-		cin >> iSelect;
-
-		vending(iSelect,iCoin);
-		system("pause");
 	}
 
-	system("cls");
-	cout << "거스름 돈은 " << iCoin << "원 입니다." << endl;
-}
-
-void info()
-{
-	cout << "===================================================" << endl;
-	cout << "1.콜라(100원) 2.사이다(200원) 3.환타(300원) 4.반환" << endl;
-	cout << "===================================================" << endl;
-}
-
-void vending(int iSelect, int iCoin)
-{
-	switch (iSelect)
-	{
-	case 1:
-		if (100 <= iCoin)
-		{
-			cout << "콜라 구매 완료!" << endl;
-			iCoin -= 100;
-		}
-		else
-			cout << "소지금 부족!" << endl;
-		break;
-	case 2:
-		if (200 <= iCoin)
-		{
-			cout << "사이다 구매 완료!" << endl;
-			iCoin -= 200;
-		}
-		else
-			cout << "소지금 부족!" << endl;
-		break;
-	case 3:
-		if (300 <= iCoin)
-		{
-			cout << "환타 구매 완료!" << endl;
-			iCoin -= 300;
-		}
-		else
-			cout << "소지금 부족!" << endl;
-		break;
-	case 4:
-		bCheck = false;
-		continue;
-	default:
-		continue;
+	for (auto& c : cmap) {
+		
+		answer*=c.second+1;
+		
 	}
 
+	
+	return answer-1;
 }
 
+int main()
+{
+
+	vector<vector<string>> clothes = { { "crowmask", "face" }, { "bluesunglasses", "face" }, { "smoky_makeup", "face" } };
+	solution(clothes);
+
+}
