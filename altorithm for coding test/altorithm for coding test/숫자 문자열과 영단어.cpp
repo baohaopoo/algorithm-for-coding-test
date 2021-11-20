@@ -40,7 +40,7 @@ int solution(string s) {
 
 	}
 
-	answer = atoi(s.c_str()); //string 타입 s를 int형으로 바꿔줌.
+	answer = stoi(s); //string 타입 s를 int형으로 바꿔줌. atoi
 	return answer;
 }
 
